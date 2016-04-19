@@ -29,7 +29,7 @@
 
 ![alt text](./Sample/Group_5.bmp "Group")
 
-##Класс Intermediate:
+###Класс Intermediate:
 <br/>1. Определить номер фишки. Вход – файл типа Single_*.bmp.
 <br/>2. Определить расположение и номера всех фишек в кадре. Вход – файл типа
 Group_*.bmp.
