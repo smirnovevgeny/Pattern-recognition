@@ -8,7 +8,7 @@
 
 Игровой набор Тантрикс состоит из десяти фишек, представленных на рисунке:
 
-![alt text](https://github.com/jeka3230/pattern-recognition/blob/master/Dozen_0.bmp "Dozen_0.bmp")
+![alt text](https://github.com/jeka3230/Pattern-recognition/blob/master/First%20task/Dozen_0.bmp "Dozen_0.bmp")
 
 Каждая фишка представляет собой правильный шестиугольник черного цвета, на котором
 изображены сегмент трёх линий синего, красного и жёлтого цветов.
@@ -22,7 +22,7 @@
 <br/> Примеры входных изображений представлены на рисунках. Это могут быть картинки с
 изображением одной фишки.
 
-![alt text](https://github.com/jeka3230/pattern-recognition/blob/master/Sample/Single_0.bmp "Single")
+![alt text](./Sample/Single_0.bmp "Single")
 
 Более сложные изображения включают группы из нескольких фишек, расположенных
 произвольно:
