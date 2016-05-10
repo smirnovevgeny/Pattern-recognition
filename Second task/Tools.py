@@ -91,36 +91,36 @@ def clockwisePoints(points):
             pointsSort[3 * position + 2] = pointAvg
 
     pointsSort, types = deleteSimilar(pointsSort, types)
-    fingers = []
-    holes = []
+    tips = []
+    valleys = []
 
     for i in xrange(len(pointsSort)):
         point = pointsSort[i]
         if types[i] == HOLE:
-            holes.append(point)
+            valleys.append(point)
         else:
-            fingers.append(point)
+            tips.append(point)
 
-    setmXmY(fingers)
-    fingers.sort(key=sort_clockwise)
-    setmXmY(holes)
-    holes.sort(key=sort_clockwise)
-    fingers = deleteSimilar(fingers)
-    shift_holes = findShift(holes)
-    shift_fingers = findShift(fingers)
+    setmXmY(tips)
+    tips.sort(key=sort_clockwise)
+    setmXmY(valleys)
+    valleys.sort(key=sort_clockwise)
+    tips = deleteSimilar(tips)
+    shift_holes = findShift(valleys)
+    shift_fingers = findShift(tips)
     pointsSort = []
 
     for i in xrange(HOLES_N):
-        pointsSort.append(fingers[(i + shift_fingers) % 5])
-        pointsSort.append(holes[(i + shift_holes) % HOLES_N])
-    pointsSort.append(fingers[(4 + shift_fingers) % 5])
+        pointsSort.append(tips[(i + shift_fingers) % 5])
+        pointsSort.append(valleys[(i + shift_holes) % HOLES_N])
+    pointsSort.append(tips[(4 + shift_fingers) % 5])
 
     return pointsSort
 
 def getPointsContour(defects, contour):
     pointsAngle = []
     # we wanna delete wrong defects
-    # delete holes that form big angles with hull
+    # delete valleys that form big angles with hull
     N = defects.shape[0]
     i = 0
     while i < N:
@@ -133,7 +133,7 @@ def getPointsContour(defects, contour):
             pointsAngle.append([start, end, far])
         i += 1
     pointsAngle = np.array(pointsAngle)
-    # delete holes near hull
+    # delete valleys near hull
     if len(pointsAngle) > HOLES_N:
         pointsDistance = []
         i = 0

@@ -97,13 +97,13 @@ def getFeatures(contoursClean):
         contour = contoursClean[k]
         image = imagesColor[k]
         hull = cv2.convexHull(contour, clockwise=True, returnPoints = False)
-        # holes is the poins between fingers
-        # wanna find all defects and collect only holes
+        # valleys is the poins between fingers
+        # wanna find all defects and collect only valleys
         defects = cv2.convexityDefects(contour, hull)
 
         pointsContour = getPointsContour(defects, contour)
         pointsSort = clockwisePoints(pointsContour)
-        # add distances between holes as features
+        # add distances between valleys as features
         for i in xrange(4):
             X[k, 8 + i] = length(pointsSort[2 * i % 4] - pointsSort[2 * (i + 1) % 4])
         # show lines and add features
