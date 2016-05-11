@@ -1,3 +1,4 @@
+# methods for clustering images
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -8,6 +9,8 @@ CLUSTERS = "Clusters"
 MINIBATCHKMEANS = "MiniBatchKMeans"
 KMEANS = "KMeans"
 SPECTRALCLUSTERING = "SpectralClustering"
+XLABEL = "Clusters number"
+YLABEL = "Score"
 MAX_ITER = 30000
 N_JOBS = 4
 N_INIT = 100
@@ -26,6 +29,8 @@ def showKMeans(X, N):
         clustering.fit_predict(X)
         scores.append(clustering.score(X))
     plt.plot(scores)
+    plt.xlabel(XLABEL)
+    plt.ylabel(YLABEL)
     plt.show()
     
 def writeKmeans(X, number, objectsNames):
@@ -49,6 +54,8 @@ def showMiniBatchKMeans(X, N):
         clustering.fit_predict(X)
         scores.append(clustering.score(X))
     plt.plot(scores)
+    plt.xlabel(XLABEL)
+    plt.ylabel(YLABEL)
     plt.show()
     
 def writeMiniBatchKMeans(X, number, objectsNames):

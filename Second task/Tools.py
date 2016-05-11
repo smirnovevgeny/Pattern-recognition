@@ -1,3 +1,4 @@
+# methods to work with points
 import math
 import numpy as np
 

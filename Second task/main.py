@@ -34,7 +34,7 @@ parser.add_argument("--show_main_contours", help='to show only chips contours', 
 parser.add_argument("--show_lines", help='to show result lines', action='store_true', default=False)
 parser.add_argument("--show_edges_filter", help='to show edges filter', action='store_true', default=False)
 parser.add_argument("-s", "--save_images", help="save images", action='store_true', default=True)
-parser.add_argument("--select_clusters_n", help="show graphs to select number of clusters", action='store_true', default=False)
+parser.add_argument("--select_clusters_n", help="show graphs to select number of clusters", action='store_true', default=True)
 args = parser.parse_args()
 
 # choose file to read
